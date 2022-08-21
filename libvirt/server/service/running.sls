@@ -16,3 +16,4 @@ libvirt-server-service-running-service-running:
     - watch:
       - pkg: libvirt-server-package-install-pkg-installed
       - file: libvirt-server-config-files-libvirtd-file-managed
+    - onlyif: test "container" != {{grains.virtual}}
